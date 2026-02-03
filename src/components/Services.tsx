@@ -8,16 +8,41 @@ const services = [
         icon: <Megaphone className="w-8 h-8" />,
         title: "Relaciones Públicas",
         description: "Gestión estratégica de la comunicación para construir y proteger la reputación de tu marca.",
+        details: [
+            "Free press",
+            "Giras de Medios",
+            "Ruedas de Prensa",
+            "Alianzas estratégicas con medios",
+            "Alianzas con entidades empresariales",
+            "Networking",
+            "Eventos"
+        ]
     },
     {
         icon: <Globe className="w-8 h-8" />,
         title: "Comunicación Digital",
         description: "Estrategias de contenido y gestión de redes sociales para conectar con tu audiencia digital.",
+        details: [
+            "Social Listening",
+            "Estrategia Digital",
+            "Social Media",
+            "Mailing",
+            "Marketing Digital",
+            "Identidad Gráfica",
+            "Benchmark digital"
+        ]
     },
     {
         icon: <Users className="w-8 h-8" />,
         title: "Agencia BTL",
         description: "Activaciones de marca y experiencias memorables que generan impacto directo en el consumidor.",
+        details: [
+            "Congresos, festivales y convenciones",
+            "Protocolo y producción del evento",
+            "Producción actividades culturales",
+            "Gabinete de prensa",
+            "Diseño de logística"
+        ]
     },
 ];
 
@@ -47,14 +72,24 @@ export const Services = () => {
                             transition={{ delay: index * 0.2 }}
                             className="group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-2"
                         >
-                            <div className="mb-6 p-4 bg-white/10 rounded-2xl w-fit group-hover:bg-[#3581bb] group-hover:text-white transition-colors">
+                            <div className="mb-6 p-4 bg-white/10 rounded-2xl w-fit group-hover:bg-primary-gradient group-hover:text-white transition-all duration-300">
                                 {service.icon}
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                            <p className="text-white/70 mb-8 leading-relaxed">
+                            <p className="text-white/70 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
-                            <a href="#" className="inline-flex items-center text-sm font-bold tracking-wider uppercase group-hover:text-[#3581bb] hover:bg-white hover:px-4 hover:py-2 hover:rounded-full transition-all">
+
+                            <ul className="space-y-2 mb-8">
+                                {service.details.map((item, i) => (
+                                    <li key={i} className="flex items-start text-white/80 text-sm">
+                                        <span className="mr-2 text-transparent bg-clip-text bg-primary-gradient font-bold">•</span>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <a href="#" className="inline-flex items-center text-sm font-bold tracking-wider uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-primary-gradient hover:bg-white hover:px-4 hover:py-2 hover:rounded-full transition-all">
                                 Saber más <ArrowUpRight className="ml-2 w-4 h-4" />
                             </a>
                         </motion.div>

@@ -49,9 +49,9 @@ export const Navbar = () => {
                     ))}
                     <a
                         href="#contacto"
-                        className="px-6 py-2 bg-white text-[#3581bb] rounded-full font-bold hover:bg-white/90 transition-all shadow-lg transform hover:scale-105"
+                        className="px-6 py-2 bg-white rounded-full font-bold hover:bg-white/90 transition-all shadow-lg transform hover:scale-105"
                     >
-                        COTIZAR
+                        <span className="text-transparent bg-clip-text bg-primary-gradient">COTIZAR</span>
                     </a>
                 </div>
 
@@ -71,7 +71,7 @@ export const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-[#3581bb] border-t border-white/10 overflow-hidden"
+                        className="md:hidden bg-primary-gradient border-t border-white/10 overflow-hidden"
                     >
                         <div className="flex flex-col p-6 space-y-4">
                             {navLinks.map((link) => (

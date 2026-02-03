@@ -60,10 +60,10 @@ export const Hero = () => {
                     <div className="flex flex-wrap gap-4">
                         <a
                             href="#contacto"
-                            className="group px-8 py-3 bg-white text-[#3581bb] rounded-full font-bold hover:bg-white/90 transition-all shadow-xl flex items-center space-x-2"
+                            className="group px-8 py-3 bg-white rounded-full font-bold hover:bg-white/90 transition-all shadow-xl flex items-center space-x-2"
                         >
-                            <span>EMPECEMOS</span>
-                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            <span className="text-transparent bg-clip-text bg-primary-gradient">EMPECEMOS</span>
+                            <ArrowRight className="w-5 h-5 text-[#3581bb] transition-transform group-hover:translate-x-1" />
                         </a>
                         <a
                             href="#servicios"

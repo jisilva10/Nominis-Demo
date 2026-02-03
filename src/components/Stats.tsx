@@ -24,7 +24,7 @@ export const Stats = () => {
                         >
                             <h3 className="text-5xl md:text-6xl font-bold font-heading mb-2">
                                 {stat.value}
-                                <span className="text-[#3581bb] text-4xl">{stat.suffix}</span>
+                                <span className="text-transparent bg-clip-text bg-primary-gradient text-4xl">{stat.suffix}</span>
                             </h3>
                             <p className="text-white/80 uppercase tracking-widest text-sm font-medium">
                                 {stat.label}

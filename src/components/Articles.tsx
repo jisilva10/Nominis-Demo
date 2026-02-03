@@ -63,7 +63,7 @@ export const Articles = () => {
                             <div className="h-48 bg-gray-200 relative overflow-hidden">
                                 {/* Placeholder for article image */}
                                 <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/50 to-transparent" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[#3581bb] text-xs font-bold px-3 py-1 rounded-full uppercase">
+                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-transparent bg-clip-text bg-primary-gradient text-xs font-bold px-3 py-1 rounded-full uppercase">
                                     {article.category}
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export const Articles = () => {
                                 </p>
 
                                 <div className="mt-auto">
-                                    <a href="#" className="inline-flex items-center text-[#3581bb] font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
+                                    <a href="#" className="inline-flex items-center text-transparent bg-clip-text bg-primary-gradient font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
                                         LEER NOTA COMPLETA <ArrowRight className="ml-2 w-4 h-4" />
                                     </a>
                                 </div>

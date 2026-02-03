@@ -66,7 +66,7 @@ export const Contact = () => {
                         viewport={{ once: true }}
                         className="bg-white rounded-3xl p-8 md:p-12 text-slate-800 shadow-2xl"
                     >
-                        <h3 className="text-2xl font-bold mb-8 text-[#3581bb]">Envíanos un mensaje</h3>
+                        <h3 className="text-2xl font-bold mb-8 text-transparent bg-clip-text bg-primary-gradient">Envíanos un mensaje</h3>
                         <form className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -107,7 +107,7 @@ export const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-gradient-to-r from-[#3581bb] to-[#46a7ca] text-white rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center justify-center space-x-2"
+                                className="w-full py-4 bg-primary-gradient text-white rounded-xl font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center justify-center space-x-2"
                             >
                                 <span>ENVIAR MENSAJE</span>
                                 <Send className="w-5 h-5" />

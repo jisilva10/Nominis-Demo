@@ -12,6 +12,9 @@ const config: Config = {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
             },
+            backgroundImage: {
+                "primary-gradient": "linear-gradient(135deg, #3581bb 0%, #46a7ca 100%)",
+            },
             fontFamily: {
                 heading: ["var(--font-outfit)", "sans-serif"],
                 body: ["var(--font-inter)", "sans-serif"],

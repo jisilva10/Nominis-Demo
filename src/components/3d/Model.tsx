@@ -39,11 +39,11 @@ export default function Model(props: any) {
             const scaleEffect = Math.max(0, baseScale - (scrollProgress * 3)); // Shrinks as it scrolls
 
             // Combine transformations
-            // "Still nothing is centered" -> Increased X offset to 0.5 to push right
-            modelRef.current.position.x = 0.5;
+            // "Not aligned" -> Reduced X offset to 0.2 (0.5 was too much)
+            modelRef.current.position.x = 0.2;
 
-            // "Text is overlapping" -> Lift model significantly high to clear text
-            const liftY = isMobile ? 1.2 : 1.0;
+            // "It fits" -> Keep lifting high to be safe
+            const liftY = isMobile ? 1.3 : 1.1;
             modelRef.current.position.y = parallaxY + liftY;
 
             modelRef.current.rotation.y = rotateY;

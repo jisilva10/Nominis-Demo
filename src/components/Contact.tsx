@@ -5,13 +5,13 @@ import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 export const Contact = () => {
     return (
-        <section id="contacto" className="py-24 relative z-10 bg-white">
-            <div className="container mx-auto px-6">
+        <section id="contacto" className="py-12 md:py-24 relative z-10 bg-white">
+            <div className="container mx-auto px-4 md:px-6">
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12">
                     {/* Contact Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-slate-900">Contáctanos</h2>
@@ -51,8 +51,8 @@ export const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="mt-12 p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                            <div className="aspect-video w-full rounded-2xl bg-slate-200 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-inner">
+                        <div className="mt-12 p-1 md:p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                            <div className="h-64 md:aspect-video w-full rounded-2xl bg-slate-200 flex items-center justify-center relative overflow-hidden group cursor-pointer shadow-inner">
                                 <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-78.47, -0.18,12/600x400')] bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity"></div>
                                 <span className="relative z-10 font-bold tracking-widest bg-white/90 px-4 py-2 rounded-lg backdrop-blur-sm text-slate-800 shadow-lg">VER EN MAPA</span>
                             </div>
@@ -61,10 +61,10 @@ export const Contact = () => {
 
                     {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-3xl p-6 md:p-12 text-slate-800 shadow-2xl border border-slate-100 mx-1 md:mx-0"
+                        className="bg-white rounded-3xl p-6 md:p-12 text-slate-800 shadow-xl md:shadow-2xl border border-slate-100"
                     >
                         <h3 className="text-2xl font-bold mb-8 text-transparent bg-clip-text bg-primary-gradient">Envíanos un mensaje</h3>
                         <form className="space-y-6">

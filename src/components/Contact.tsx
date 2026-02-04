@@ -7,7 +7,7 @@ export const Contact = () => {
     return (
         <section id="contacto" className="py-24 relative z-10 bg-white">
             <div className="container mx-auto px-6">
-                <div className="grid md:grid-cols-2 gap-12">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12">
                     {/* Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -64,7 +64,7 @@ export const Contact = () => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-3xl p-8 md:p-12 text-slate-800 shadow-2xl border border-slate-100"
+                        className="bg-white rounded-3xl p-6 md:p-12 text-slate-800 shadow-2xl border border-slate-100 mx-1 md:mx-0"
                     >
                         <h3 className="text-2xl font-bold mb-8 text-transparent bg-clip-text bg-primary-gradient">Envíanos un mensaje</h3>
                         <form className="space-y-6">

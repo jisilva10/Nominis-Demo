@@ -24,7 +24,7 @@ export const Hero = () => {
                     className="max-w-4xl"
                 >
                     {/* Empty space for the 3D Logo to pop through (Centered) */}
-                    <div className="h-[35vh] md:h-[50vh] w-full" />
+                    <div className="h-[40vh] md:h-[50vh] w-full" />
 
                     <p className="text-lg md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
                         Ayudamos a personas, empresas e instituciones a contar lo que quieren contar y llegar a donde quieren llegar.

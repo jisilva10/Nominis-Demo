@@ -20,7 +20,7 @@ export default function Model(props: any) {
 
             // Responsive Scale: smaller on mobile (viewport.width < 5 is approx <768px)
             const isMobile = viewport.width < 5;
-            const baseScale = isMobile ? 2.2 : 3.5;
+            const baseScale = isMobile ? 1.8 : 3.5;
 
             // Gentle floating animation (Time based)
             const time = state.clock.elapsedTime;
@@ -41,7 +41,9 @@ export default function Model(props: any) {
             // Combine transformations
             // "Hidden behind letters" -> Moved UP by 0.5 to clear the text below
             // "Take out the bouncing effect" -> Removed floatY
-            modelRef.current.position.y = parallaxY + 0.5;
+            // Mobile: Move up slightly more (0.8) to clear text
+            const baseY = isMobile ? 0.8 : 0.5;
+            modelRef.current.position.y = parallaxY + baseY;
             modelRef.current.rotation.y = rotateY;
 
             // "Make it look a little up" -> Fixed negative X rotation (tilting back) instead of sine wave

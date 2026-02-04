@@ -9,22 +9,21 @@ import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-transparent">
+        <section className="relative min-h-screen w-full overflow-hidden bg-transparent">
             {/* Background Elements - Subtle Blue Glows */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl opacity-60" />
                 <div className="absolute top-[40%] -left-[10%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl opacity-60" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center">
+            <div className="container mx-auto px-6 h-full relative z-10 flex flex-col items-center pt-[55vh] md:pt-[45vh] text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl"
                 >
-                    {/* Empty space for the 3D Logo to pop through (Centered) */}
-                    <div className="h-[40vh] md:h-[50vh] w-full" />
+                    {/* Text pushed down by padding, no spacer div needed */}
 
                     <p className="text-lg md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
                         Ayudamos a personas, empresas e instituciones a contar lo que quieren contar y llegar a donde quieren llegar.

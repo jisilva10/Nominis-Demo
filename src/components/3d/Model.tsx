@@ -41,9 +41,8 @@ export default function Model(props: any) {
             // Combine transformations
             // "Hidden behind letters" -> Moved UP by 0.5 to clear the text below
             // "Take out the bouncing effect" -> Removed floatY
-            // Mobile: Move up slightly more (0.8) to clear text
-            const baseY = isMobile ? 0.8 : 0.5;
-            modelRef.current.position.y = parallaxY + baseY;
+            // "Still nothing is centered" -> Reset to 0 to be dead center in viewport
+            modelRef.current.position.y = parallaxY;
             modelRef.current.rotation.y = rotateY;
 
             // "Make it look a little up" -> Fixed negative X rotation (tilting back) instead of sine wave

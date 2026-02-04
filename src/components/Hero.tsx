@@ -16,12 +16,12 @@ export const Hero = () => {
                 <div className="absolute top-[40%] -left-[10%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl opacity-60" />
             </div>
 
-            <div className="container mx-auto px-6 h-full relative z-10 flex flex-col items-center pt-[50vh] md:pt-[60vh] text-center">
+            <div className="container mx-auto px-6 h-full relative z-10 flex flex-col items-center pt-[55vh] md:pt-[60vh] text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-4xl"
+                    className="max-w-4xl w-full mx-auto"
                 >
                     {/* Text pushed down by padding, no spacer div needed */}
 

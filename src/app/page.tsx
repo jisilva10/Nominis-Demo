@@ -20,8 +20,8 @@ export default function Home() {
             <Contact />
 
             {/* Footer Simple */}
-            <footer className="py-12 bg-black/20 backdrop-blur-md border-t border-white/10 text-center relative z-10">
-                <p className="text-white/60 text-sm">
+            <footer className="py-12 bg-white border-t border-slate-100 text-center relative z-10">
+                <p className="text-slate-500 text-sm">
                     Derechos Reservados Nominis Ecuador &copy; {new Date().getFullYear()}
                 </p>
             </footer>

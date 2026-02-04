@@ -27,13 +27,13 @@ export const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/10 backdrop-blur-md border-b border-white/10 shadow-lg" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm" : "bg-transparent"
                 }`}
         >
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="relative h-20 w-64">
-                    <img src="https://imgur.com/rjxIWK3.png" alt="Nominis Logo" className="h-full object-contain brightness-0 invert" />
+                    <img src="https://imgur.com/sbqOVQH.png" alt="Nominis Logo" className="h-full object-contain brightness-0" />
                 </div>
 
                 {/* Desktop Menu */}
@@ -42,22 +42,22 @@ export const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-white font-medium hover:text-white/80 transition-colors uppercase text-sm tracking-wider"
+                            className={`font-medium transition-colors uppercase text-sm tracking-wider ${isScrolled ? "text-slate-600 hover:text-primary" : "text-slate-800 hover:text-primary"}`}
                         >
                             {link.name}
                         </a>
                     ))}
                     <a
                         href="#contacto"
-                        className="px-6 py-2 bg-white rounded-full font-bold hover:bg-white/90 transition-all shadow-lg transform hover:scale-105"
+                        className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold hover:shadow-lg transition-all transform hover:scale-105"
                     >
-                        <span className="text-transparent bg-clip-text bg-primary-gradient">COTIZAR</span>
+                        <span>COTIZAR</span>
                     </a>
                 </div>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden text-slate-800"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -71,14 +71,14 @@ export const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-primary-gradient border-t border-white/10 overflow-hidden"
+                        className="md:hidden bg-white border-t border-gray-100 overflow-hidden shadow-xl"
                     >
                         <div className="flex flex-col p-6 space-y-4">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-white text-lg font-medium"
+                                    className="text-slate-800 text-lg font-medium hover:text-primary"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}

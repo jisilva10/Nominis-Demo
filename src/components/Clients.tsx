@@ -23,7 +23,7 @@ const clients = [
 
 export const Clients = () => {
     return (
-        <section className="py-24 bg-white/5 relative z-10">
+        <section className="py-24 bg-white relative z-10 border-t border-slate-100">
             <div className="container mx-auto px-6 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export const Clients = () => {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h2 className="text-4xl font-bold font-heading mb-6">NUESTROS CLIENTES</h2>
+                    <h2 className="text-4xl font-bold font-heading mb-6 text-slate-900">NUESTROS CLIENTES</h2>
                     <div className="w-24 h-1.5 bg-primary-gradient mx-auto rounded-full mb-12" />
                 </motion.div>
 
@@ -43,12 +43,12 @@ export const Clients = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center h-32"
+                            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center h-32 hover:border-primary/20"
                         >
                             <img
                                 src={client.logo}
                                 alt={client.name}
-                                className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                                className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                             />
                         </motion.div>
                     ))}
@@ -59,7 +59,7 @@ export const Clients = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="max-w-4xl mx-auto bg-white rounded-3xl p-12 shadow-2xl"
+                    className="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-white rounded-3xl p-12 shadow-inner border border-blue-100"
                 >
                     <h3 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-transparent bg-clip-text bg-primary-gradient">
                         Somos tu aliado estratégico

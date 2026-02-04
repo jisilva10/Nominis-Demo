@@ -48,7 +48,7 @@ const services = [
 
 export const Services = () => {
     return (
-        <section id="servicios" className="py-24 relative z-10">
+        <section id="servicios" className="py-24 relative z-10 bg-slate-50">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -56,8 +56,8 @@ export const Services = () => {
                     viewport={{ once: true }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">Conoce Nuestros Servicios</h2>
-                    <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-slate-900">Conoce Nuestros Servicios</h2>
+                    <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                         Soluciones integrales diseñadas para potenciar tu marca en un mercado competitivo.
                     </p>
                 </motion.div>
@@ -70,26 +70,26 @@ export const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-2"
+                            className="group bg-white rounded-3xl p-8 border border-slate-200 hover:border-primary/50 transition-all hover:-translate-y-2 shadow-sm hover:shadow-xl"
                         >
-                            <div className="mb-6 p-4 bg-white/10 rounded-2xl w-fit group-hover:bg-primary-gradient group-hover:text-white transition-all duration-300">
+                            <div className="mb-6 p-4 bg-blue-50 rounded-2xl w-fit text-primary group-hover:bg-primary-gradient group-hover:text-white transition-all duration-300">
                                 {service.icon}
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                            <p className="text-white/70 mb-6 leading-relaxed">
+                            <h3 className="text-2xl font-bold mb-4 text-slate-800">{service.title}</h3>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
 
                             <ul className="space-y-2 mb-8">
                                 {service.details.map((item, i) => (
-                                    <li key={i} className="flex items-start text-white/80 text-sm">
-                                        <span className="mr-2 text-transparent bg-clip-text bg-primary-gradient font-bold">•</span>
+                                    <li key={i} className="flex items-start text-slate-600 text-sm">
+                                        <span className="mr-2 text-primary font-bold">•</span>
                                         {item}
                                     </li>
                                 ))}
                             </ul>
 
-                            <a href="#" className="inline-flex items-center text-sm font-bold tracking-wider uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-primary-gradient hover:bg-white hover:px-4 hover:py-2 hover:rounded-full transition-all">
+                            <a href="#" className="inline-flex items-center text-sm font-bold tracking-wider uppercase text-primary hover:text-secondary transition-all group-hover:underline decoration-2 underline-offset-4">
                                 Saber más <ArrowUpRight className="ml-2 w-4 h-4" />
                             </a>
                         </motion.div>

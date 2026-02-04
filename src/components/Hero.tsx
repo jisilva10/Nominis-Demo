@@ -1,111 +1,49 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 
+
+
+
 export const Hero = () => {
-    const services = [
-        {
-            title: "Comunicación",
-            subtitle: ["Relaciones Públicas", "Digital & BTL"],
-        },
-        {
-            title: "Relaciones Públicas",
-            subtitle: ["Reputación de Marca", "Gestión de Crisis"],
-        },
-        {
-            title: "Digital & BTL",
-            subtitle: ["Estrategia Digital", "Activaciones de Marca"],
-        },
-    ];
-
-    const [activeService, setActiveService] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveService((prev) => (prev + 1) % services.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
-    const nextService = () => {
-        setActiveService((prev) => (prev + 1) % services.length);
-    };
-
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Background Elements */}
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-transparent">
+            {/* Background Elements - Subtle Blue Glows */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl" />
-                <div className="absolute top-[40%] -left-[10%] w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl opacity-60" />
+                <div className="absolute top-[40%] -left-[10%] w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl opacity-60" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center">
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-4xl"
                 >
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium tracking-wider mb-6 backdrop-blur-sm">
-                        AGENCIA ESTRATÉGICA
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
-                        Somos <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">NOMINIS</span>
-                    </h1>
-                    <p className="text-xl md:text-2xl text-white/90 mb-8 font-light max-w-lg">
+                    {/* Empty space for the 3D Logo to pop through (Centered) */}
+                    <div className="h-[35vh] md:h-[50vh] w-full" />
+
+                    <p className="text-lg md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
                         Ayudamos a personas, empresas e instituciones a contar lo que quieren contar y llegar a donde quieren llegar.
                     </p>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
                             href="#contacto"
-                            className="group px-8 py-3 bg-white rounded-full font-bold hover:bg-white/90 transition-all shadow-xl flex items-center space-x-2"
+                            className="group px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold hover:shadow-xl transition-all shadow-lg flex items-center space-x-2"
                         >
-                            <span className="text-transparent bg-clip-text bg-primary-gradient">EMPECEMOS</span>
-                            <ArrowRight className="w-5 h-5 text-[#3581bb] transition-transform group-hover:translate-x-1" />
+                            <span>EMPECEMOS</span>
+                            <ArrowRight className="w-5 h-5 text-white transition-transform group-hover:translate-x-1" />
                         </a>
                         <a
                             href="#servicios"
-                            className="px-8 py-3 bg-transparent border border-white text-white rounded-full font-bold hover:bg-white/10 transition-all"
+                            className="group px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-full font-bold hover:shadow-lg transition-all flex items-center space-x-2 hover:border-primary/30"
                         >
-                            NUESTROS SERVICIOS
+                            <span>NUESTROS SERVICIOS</span>
                         </a>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative hidden md:block cursor-pointer group"
-                    onClick={nextService}
-                >
-                    {/* Abstract Layout Representation */}
-                    <div className="relative w-full aspect-square max-w-lg mx-auto transition-transform duration-500 group-hover:scale-105">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent rounded-3xl backdrop-blur-xl border border-white/20 transform rotate-6 shadow-2xl transition-transform group-hover:rotate-8" />
-                        <div className="absolute inset-0 bg-gradient-to-bl from-white/10 to-transparent rounded-3xl backdrop-blur-md border border-white/10 transform -rotate-3 translate-y-4 transition-transform group-hover:-rotate-6" />
-
-                        <div className="absolute inset-4 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm shadow-inner">
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeService}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="text-center p-8"
-                                >
-                                    <h3 className="text-4xl font-bold mb-4">{services[activeService].title}</h3>
-                                    <div className="w-24 h-1.5 bg-white mx-auto mb-6 rounded-full" />
-                                    {services[activeService].subtitle.map((sub, index) => (
-                                        <p key={index} className="text-white/90 text-xl font-medium leading-relaxed">
-                                            {sub}
-                                        </p>
-                                    ))}
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
                     </div>
                 </motion.div>
             </div>

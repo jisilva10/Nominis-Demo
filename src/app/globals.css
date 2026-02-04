@@ -9,6 +9,6 @@
 
 @layer base {
   body {
-    @apply antialiased bg-gradient-to-br from-[#3581bb] to-[#46a7ca] min-h-screen text-white;
+    @apply antialiased bg-white text-slate-800;
   }
 }

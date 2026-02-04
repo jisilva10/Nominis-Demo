@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google"; // Using Google Fonts
+import { Sora } from "next/font/google"; // Using Google Fonts
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
 
 export const metadata: Metadata = {
     title: "Nominis - Agencia Estratégica",
     description: "Agencia de relaciones públicas, comunicación digital y BTL.",
 };
+
+const Scene3D = dynamic(() => import("@/components/3d/Scene3D"), { ssr: false });
 
 export default function RootLayout({
     children,
@@ -18,8 +20,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es" className="scroll-smooth">
-            <body className={cn(inter.variable, outfit.variable, "font-body antialiased bg-gradient-to-br from-[#3581bb] to-[#46a7ca] min-h-screen text-white relative overflow-x-hidden")}>
-                {children}
+            <body className={cn(sora.variable, "font-body antialiased bg-transparent text-slate-800 relative overflow-x-hidden")}>
+                <Scene3D />
+                <div className="relative z-10">
+                    {children}
+                </div>
             </body>
         </html>
     );

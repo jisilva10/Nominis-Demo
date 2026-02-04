@@ -20,7 +20,7 @@ export default function Model(props: any) {
 
             // Responsive Scale: smaller on mobile (viewport.width < 5 is approx <768px)
             const isMobile = viewport.width < 5;
-            const baseScale = isMobile ? 1.5 : 3.0;
+            const baseScale = isMobile ? 2.1 : 3.0;
 
             // Gentle floating animation (Time based)
             const time = state.clock.elapsedTime;
@@ -39,11 +39,11 @@ export default function Model(props: any) {
             const scaleEffect = Math.max(0, baseScale - (scrollProgress * 3)); // Shrinks as it scrolls
 
             // Combine transformations
-            // "Not aligned" -> Reduced X offset further to 0.1
-            modelRef.current.position.x = 0.1;
+            // "Everything should be centered" -> Reset X to 0 for pure geometric center
+            modelRef.current.position.x = 0;
 
-            // "It fits" -> Keep lifting high to be safe
-            const liftY = isMobile ? 1.3 : 1.1;
+            // "Too much space" -> Reduced lift slightly since we reduced padding in Hero
+            const liftY = isMobile ? 1.0 : 1.1;
             modelRef.current.position.y = parallaxY + liftY;
 
             modelRef.current.rotation.y = rotateY;

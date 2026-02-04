@@ -8,6 +8,12 @@
 }
 
 @layer base {
+
+  html,
+  body {
+    @apply w-full max-w-[100vw] overflow-x-hidden m-0 p-0;
+  }
+
   body {
     @apply antialiased bg-white text-slate-800;
   }

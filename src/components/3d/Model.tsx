@@ -39,10 +39,12 @@ export default function Model(props: any) {
             const scaleEffect = Math.max(0, baseScale - (scrollProgress * 3)); // Shrinks as it scrolls
 
             // Combine transformations
-            // "Hidden behind letters" -> Moved UP by 0.5 to clear the text below
-            // "Take out the bouncing effect" -> Removed floatY
-            // "Still nothing is centered" -> Reset to 0 to be dead center in viewport
-            modelRef.current.position.y = parallaxY;
+            // "Still nothing is centered" -> Added slight X offset (0.2) to push right
+            modelRef.current.position.x = 0.2;
+
+            // "Text is overlapping" -> Move model UP slightly to make room below
+            modelRef.current.position.y = parallaxY + 0.5;
+
             modelRef.current.rotation.y = rotateY;
 
             // "Make it look a little up" -> Fixed negative X rotation (tilting back) instead of sine wave

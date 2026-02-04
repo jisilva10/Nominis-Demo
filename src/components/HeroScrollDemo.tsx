@@ -18,12 +18,23 @@ export function HeroScrollDemo() {
                     </>
                 }
             >
+                {/* Desktop Image */}
                 <Image
                     src="/presentacion-sin-titulo.png"
-                    alt="hero"
+                    alt="hero desktop"
                     height={720}
                     width={1400}
-                    className="mx-auto rounded-2xl object-contain h-full w-full object-center"
+                    className="hidden md:block mx-auto rounded-2xl object-contain h-full w-full object-center"
+                    draggable={false}
+                />
+
+                {/* Mobile Image */}
+                <Image
+                    src="/mobile-screenshot.png"
+                    alt="hero mobile"
+                    height={720}
+                    width={1400}
+                    className="block md:hidden mx-auto rounded-2xl object-contain h-full w-full object-center"
                     draggable={false}
                 />
             </ContainerScroll>

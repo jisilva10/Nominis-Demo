@@ -62,7 +62,8 @@ export const Services = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                {/* Responsive Layout: Horizontal Scroll on Mobile, Grid on Desktop */}
+                <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -70,7 +71,7 @@ export const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="group bg-white rounded-3xl p-8 border border-slate-200 hover:border-primary/50 transition-all hover:-translate-y-2 shadow-sm hover:shadow-xl"
+                            className="group bg-white rounded-3xl p-8 border border-slate-200 hover:border-primary/50 transition-all hover:-translate-y-2 shadow-sm hover:shadow-xl min-w-[300px] md:min-w-0 snap-center"
                         >
                             <div className="mb-6 p-4 bg-blue-50 rounded-2xl w-fit text-primary group-hover:bg-primary-gradient group-hover:text-white transition-all duration-300">
                                 {service.icon}

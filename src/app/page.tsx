@@ -4,6 +4,7 @@ import { Stats } from "@/components/Stats";
 import { Services } from "@/components/Services";
 import { Articles } from "@/components/Articles";
 import { Contact } from "@/components/Contact";
+import { HeroScrollDemo } from "@/components/HeroScrollDemo";
 import { Clients } from "@/components/Clients";
 // import WhatsAppButton if we separate it, or embed here. 
 // I'll add a simple floating button here directly or separate component.
@@ -15,6 +16,7 @@ export default function Home() {
             <Hero />
             <Stats />
             <Services />
+            <HeroScrollDemo />
             <Clients />
             <Articles />
             <Contact />

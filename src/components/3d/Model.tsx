@@ -49,7 +49,8 @@ export default function Model(props: any) {
             modelRef.current.rotation.y = rotateY;
 
             // "Make it look a little up" -> Fixed negative X rotation (tilting back) instead of sine wave
-            modelRef.current.rotation.x = -0.1;
+            modelRef.current.rotation.x = 0;
+            modelRef.current.rotation.z = 0.05; // Slight tilt to the left
 
             // Apply scale explicitly here if not using prop
             modelRef.current.scale.setScalar(scaleEffect);

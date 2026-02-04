@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Home, Users, Briefcase, FileText, Phone, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Home, Users, Briefcase, FileText, Phone, X, Menu } from "lucide-react";
 import { NavBar as TubelightNavBar } from "@/components/ui/tubelight-navbar";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -9,7 +9,9 @@ import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isAtTop, setIsAtTop] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const navItems = [
         { name: "Inicio", url: "#", icon: Home },
@@ -21,24 +23,41 @@ export const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+            const currentScrollY = window.scrollY;
+            const atTop = currentScrollY < 50;
+
+            setIsAtTop(atTop);
+            setIsVisible(true); // Always show when scrolling
+
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
             }
+
+            // Hide after 2 seconds of inactivity (if not at top)
+            timeoutRef.current = setTimeout(() => {
+                setIsVisible(false);
+            }, 2000);
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        handleScroll(); // Initial check
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        };
     }, []);
+
+    // Visible if at the top OR explicitly visible (scrolling)
+    const showNav = isAtTop || isVisible;
 
     return (
         <>
-            {/* Fixed Logo - Top Left - Visible only on scroll */}
+            {/* Fixed Logo - Top Left - Visible at top, while scrolling, hides when stopped */}
             <div
                 className={cn(
                     "fixed top-6 left-6 z-50 w-20 md:w-24 pointer-events-none transition-opacity duration-300",
-                    isScrolled ? "opacity-100" : "opacity-0"
+                    showNav ? "opacity-100" : "opacity-0"
                 )}
             >
                 <img
@@ -48,19 +67,15 @@ export const Navbar = () => {
                 />
             </div>
 
-            {/* Mobile Hamburger Button - Top Right - Visible only on scroll on mobile */}
+            {/* Mobile Hamburger Button - Top Right - Brand Blue Icon */}
             <div
                 className={cn(
                     "fixed top-6 right-6 z-50 md:hidden transition-opacity duration-300 cursor-pointer",
-                    isScrolled ? "opacity-100" : "opacity-0"
+                    showNav ? "opacity-100" : "opacity-0"
                 )}
                 onClick={() => setIsOpen(true)}
             >
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
-                    alt="Menu"
-                    className="w-8 h-8 object-contain invert"
-                />
+                <Menu className="w-8 h-8 text-primary" strokeWidth={2.5} />
             </div>
 
             {/* Tubelight Navbar - Desktop Only */}

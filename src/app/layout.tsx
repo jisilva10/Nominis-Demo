@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="es" className="scroll-smooth">
-            <body className={cn(sora.variable, "font-body antialiased bg-transparent text-slate-800 relative w-full max-w-[100vw] overflow-x-hidden")}>
+            <body className={cn(sora.variable, "font-body antialiased bg-transparent text-slate-800 relative w-full overflow-x-hidden")}>
                 <Scene3D />
                 <div className="relative z-10">
                     {children}
